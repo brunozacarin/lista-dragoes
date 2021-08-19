@@ -1,1 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.app-container {
+    min-height: 320px;
+    overflow: hidden;
+}

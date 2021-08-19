@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-body">
+        <div class="row ml-1">
+            <h5 class="card-title">Lista de Dragões</h5>
+            <button class="btn btn-dark btn-sm ml-auto" style="margin: 0 15px 5px 5px;" (click)="editDragao()">Adicionar
+                Dragão</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Data de Criação</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dragao of listaDragoes | async; let i = index">
+                        <td scope="row">{{dragao.id}}</td>
+                        <td>{{dragao.name}}</td>
+                        <td>{{dragao.type}}</td>
+                        <td>{{dragao.createdAt | date:'dd/MM/yyyy'}}</td>
+                        <td>
+                            <fa-icon [icon]="viewIcon" (click)="editDragao(dragao, true)"></fa-icon>
+                            <fa-icon [icon]="editIcon" (click)="editDragao(dragao)"></fa-icon>
+                            <fa-icon [icon]="deleteIcon" (click)="deleteDragao(dragao)"></fa-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

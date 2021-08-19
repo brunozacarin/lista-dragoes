@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://localhost:4200',
+  dragonUrl: 'http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon'
 };
 
 /*

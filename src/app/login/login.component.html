@@ -1,0 +1,32 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Login</h4>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username">Usuário</label>
+                    <input type="text" formControlName="username" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && formControls.username.errors }" />
+                    <div *ngIf="submitted && formControls.username.errors" class="invalid-feedback">
+                        <div *ngIf="formControls.username.errors.required">Usuário é requerido!</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" formControlName="password" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && formControls.password.errors }" />
+                    <div *ngIf="submitted && formControls.password.errors" class="invalid-feedback">
+                        <div *ngIf="formControls.password.errors.required">Senha é requerida!</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Login
+                    </button>
+                    <a routerLink="../cadastro" class="btn btn-link">Cadastrar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
